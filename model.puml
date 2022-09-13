@@ -1,0 +1,63 @@
+@startuml
+
+class Body {
+- position : Vector
+- velocity : Vector
+- mass : double
++ move (f:Vector, dt:double)
++ forceFrom (b : Body) : Vector
++ toString()
+}
+
+class Universe {
+- numBodies : int
+- radius : double
++ Universe (fname : String)
++ Universe (numBodies : int)
++ update (dt : double)
+}
+
+class NBodySimulator {
+- timeStep : double
+- pauseTime : int
+- trace : boolean
++ NBodySimulator (String fname : String,  dt : double,
+      \t pauseTime : int, do_trace : boolean)
++ NBodySimulator (numBodies : int)
++ drawUniverse()
++ simulate (initTime : double,  endTime : double)
++ simulate()
+- createCanvas()
++ {static} main (args : String[])
+}
+
+
+Universe *-> "1..*" Body : bodies
+NBodySimulator -> "1" Universe
+
+note bottom of NBodySimulator
+//...
+nbody = new NBodySimulator(fname,
+    dt, pauseTime, do_trace);
+nbody.simulate();
+end note
+
+class Vector {
+- n : int
+- data : double[n]
++ Vector (n : int)
++ Vector (data : double[])
++ length() : int
++ magnitude() : double
++ cartesian (i : int) : double
++ direction() : Vector
++ plus (v : Vector) : Vector
++ minus (v : Vector) : Vector
++ scale (factor : double) : Vector
++ distanceTo (v : Vector) : double
++ dot (v : Vector) : double
++ toString() : String
+}
+
+Vector -[hidden]up-> Body
+@enduml
