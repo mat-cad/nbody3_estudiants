@@ -97,7 +97,7 @@ public class Main {
     } else if (testCase == 7) {
       final double[] Duration = new double[]{0.56, 0.9, 2.1, 2.2, 2.62, 2.9, 2.92, 2.96, 2.97, 3.0};
       // the longest body trajectory of the first 10 choreographies lasts 3 seconds
-      int nchoreography = 2; // 0...9
+      int nchoreography = 2; // 1...10
       timeStep = 1e-6; // seconds
       numSteps = (int) (Duration[nchoreography] / timeStep);
       universe = new Choreography(nchoreography);
