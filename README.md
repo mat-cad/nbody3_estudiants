@@ -1,2 +1,2 @@
 
-https://github.com/mat-cad/nbody3_estudiants/videos/central_configuration.mp4
+https://github.com/mat-cad/nbody3_estudiants/blob/master/videos/central_configuration.mp4
