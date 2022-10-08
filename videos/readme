@@ -1,0 +1,6 @@
+I've captured the videos with Kazam and the converted them with
+    ffmpeg -i random.mp4 -pix_fmt yuv420p -crf 18 ~/Desktop/random.mp4
+because the originals were not playable in github.
+
+To add a video to README.md, edit it in the github webpage (pencil) and
+then drag and drop = upload into github special space and write the web address.
